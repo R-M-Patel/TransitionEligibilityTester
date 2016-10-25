@@ -5,8 +5,8 @@ class Search < ApplicationRecord
     validates :age, presence: true
     validates :income, presence: true
     # Validate income input
-    validates :married, presence: true
-    validates :veteran, presence: true
-    validates :disabled, presence: true
+    # validates :married, presence: true
+    # validates :veteran, presence: true
+    # validates :disabled, presence: true
     
 end
