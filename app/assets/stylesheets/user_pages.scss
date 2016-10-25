@@ -8,3 +8,17 @@
 h1, h2 {
     text-align: center;
 }
+
+input, textarea, select, .uneditable-input {
+    width: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input {
+    height: auto !important;
+}
+
+centre {
+    margin: 0 auto;
+}

@@ -24,27 +24,27 @@
             </div>
         </div>
         
-        <div class="row">
+        <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <%= form_for(@search) do |f| %>
                     <%= f.label :zipcode %>
                     <%= f.number_field :zipcode %>
-                    
+                    </br>
                     <%= f.label :age %>
                     <%= f.number_field :age %>
-                    
+                    </br>
                     <%= f.label :income %>
                     <%= f.number_field :income %>
-                    
+                    </br>
                     <%= f.label :married %>
                     <%= f.check_box :married %>
-                    
+                    </br>
                     <%= f.label :veteran %>
                     <%= f.check_box :veteran %>
-                    
+                    </br>
                     <%= f.label :disabled %>
                     <%= f.check_box :disabled %>
-                    
+                    </br>
                     <%= f.submit "Search", class: "btn btn-primary" %>
                 <% end %>
             </div>
