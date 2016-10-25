@@ -1,4 +1,4 @@
-class SearchController < ApplicationController
+class SearchesController < ApplicationController
   def home
     # @search = Search.new
   end
@@ -27,6 +27,7 @@ class SearchController < ApplicationController
   end
   
   private
+  
     def search_params
       params.require(:search).permit(:zipcode, :age, :income, :married, :veteran, :disabled)
     end

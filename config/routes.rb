@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'search#new'
-  get '/root', to: 'search#new'
-  get '/result', to: 'search#result'
-  get '/support', to: 'search#support'
+  root 'searches#new'
+  get '/root', to: 'searches#new'
+  # get '/result', to: 'searches#result'
+  get '/support', to: 'searches#support'
   resources :searches
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
-#   root 'application#hello'
+
+  # root 'application#hello'
   
 end
