@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/support', to: 'user_pages#support'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #root 'user_pages#home'
-  root 'application#hello'
+  root 'user_pages#home'
+#   root 'application#hello'
   
 end
