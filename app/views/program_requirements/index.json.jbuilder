@@ -1,0 +1,1 @@
+json.array! @program_requirements, partial: 'program_requirements/program_requirement', as: :program_requirement

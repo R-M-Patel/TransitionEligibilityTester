@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Program Requirements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Min age</th>
+      <th>Max age</th>
+      <th>Married</th>
+      <th>Income threshold</th>
+      <th>Assets threshold</th>
+      <th>Veteran</th>
+      <th>Disabled</th>
+      <th>Zip code list</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @program_requirements.each do |program_requirement| %>
+      <tr>
+        <td><%= program_requirement.min_age %></td>
+        <td><%= program_requirement.max_age %></td>
+        <td><%= program_requirement.married %></td>
+        <td><%= program_requirement.income_threshold %></td>
+        <td><%= program_requirement.assets_threshold %></td>
+        <td><%= program_requirement.veteran %></td>
+        <td><%= program_requirement.disabled %></td>
+        <td><%= program_requirement.zip_code_list %></td>
+        <td><%= link_to 'Show', program_requirement %></td>
+        <td><%= link_to 'Edit', edit_program_requirement_path(program_requirement) %></td>
+        <td><%= link_to 'Destroy', program_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program Requirement', new_program_requirement_path %>

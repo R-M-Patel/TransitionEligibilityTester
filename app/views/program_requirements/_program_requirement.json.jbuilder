@@ -1,0 +1,2 @@
+json.extract! program_requirement, :id, :min_age, :max_age, :married, :income_threshold, :assets_threshold, :veteran, :disabled, :zip_code_list, :created_at, :updated_at
+json.url program_requirement_url(program_requirement, format: :json)

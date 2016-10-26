@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :program_requirements
+  resources :programs
   root 'searches#new'
   get '/root', to: 'searches#new'
   get '/result', to: 'searches#result'

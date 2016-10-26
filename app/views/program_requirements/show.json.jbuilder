@@ -1,0 +1,1 @@
+json.partial! "program_requirements/program_requirement", program_requirement: @program_requirement

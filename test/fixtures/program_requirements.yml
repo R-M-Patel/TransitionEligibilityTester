@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  min_age: 1
+  max_age: 1
+  married: false
+  income_threshold: 1
+  assets_threshold: 1
+  veteran: false
+  disabled: false
+  zip_code_list: MyText
+
+two:
+  min_age: 1
+  max_age: 1
+  married: false
+  income_threshold: 1
+  assets_threshold: 1
+  veteran: false
+  disabled: false
+  zip_code_list: MyText

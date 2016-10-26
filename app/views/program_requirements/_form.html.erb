@@ -1,0 +1,57 @@
+<%= form_for(program_requirement) do |f| %>
+  <% if program_requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(program_requirement.errors.count, "error") %> prohibited this program_requirement from being saved:</h2>
+
+      <ul>
+      <% program_requirement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :min_age %>
+    <%= f.number_field :min_age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :max_age %>
+    <%= f.number_field :max_age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :married %>
+    <%= f.check_box :married %>
+  </div>
+
+  <div class="field">
+    <%= f.label :income_threshold %>
+    <%= f.number_field :income_threshold %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assets_threshold %>
+    <%= f.number_field :assets_threshold %>
+  </div>
+
+  <div class="field">
+    <%= f.label :veteran %>
+    <%= f.check_box :veteran %>
+  </div>
+
+  <div class="field">
+    <%= f.label :disabled %>
+    <%= f.check_box :disabled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip_code_list %>
+    <%= f.text_area :zip_code_list %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

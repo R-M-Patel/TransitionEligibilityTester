@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Min age:</strong>
+  <%= @program_requirement.min_age %>
+</p>
+
+<p>
+  <strong>Max age:</strong>
+  <%= @program_requirement.max_age %>
+</p>
+
+<p>
+  <strong>Married:</strong>
+  <%= @program_requirement.married %>
+</p>
+
+<p>
+  <strong>Income threshold:</strong>
+  <%= @program_requirement.income_threshold %>
+</p>
+
+<p>
+  <strong>Assets threshold:</strong>
+  <%= @program_requirement.assets_threshold %>
+</p>
+
+<p>
+  <strong>Veteran:</strong>
+  <%= @program_requirement.veteran %>
+</p>
+
+<p>
+  <strong>Disabled:</strong>
+  <%= @program_requirement.disabled %>
+</p>
+
+<p>
+  <strong>Zip code list:</strong>
+  <%= @program_requirement.zip_code_list %>
+</p>
+
+<%= link_to 'Edit', edit_program_requirement_path(@program_requirement) %> |
+<%= link_to 'Back', program_requirements_path %>
