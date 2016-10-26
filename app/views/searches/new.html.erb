@@ -26,9 +26,8 @@
         
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
-                <%= form_for(@search) do |f| %>
+                <%= form_for(@search, url: search_path) do |f| %>
                     <%= render 'shared/error_messages' %>
-                
                     <%= f.label :zipcode %>
                     <%= f.number_field :zipcode, class: 'form-control' %>
                     </br>
@@ -37,6 +36,9 @@
                     </br>
                     <%= f.label :income %>
                     <%= f.number_field :income, class: 'form-control' %>
+                    </br>
+                    <%= f.label :assetAmount %>
+                    <%= f.number_field :assetAmount, class: 'form-control' %>
                     </br>
                     <%= f.label :married %>
                     <%= f.check_box :married, class: 'form-control' %>

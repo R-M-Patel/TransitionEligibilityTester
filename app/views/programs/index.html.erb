@@ -6,9 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Link</th>
-      <th>Address</th>
-      <th>Description</th>
+      <th>Abbreviation</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +15,7 @@
     <% @programs.each do |program| %>
       <tr>
         <td><%= program.name %></td>
-        <td><%= program.link %></td>
-        <td><%= program.address %></td>
-        <td><%= program.description %></td>
+        <td><%= program.abbreviation %></td>
         <td><%= link_to 'Show', program %></td>
         <td><%= link_to 'Edit', edit_program_path(program) %></td>
         <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>

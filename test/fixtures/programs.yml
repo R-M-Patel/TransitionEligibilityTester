@@ -2,12 +2,8 @@
 
 one:
   name: MyString
-  link: MyString
-  address: MyString
-  description: MyText
+  abbreviation: MyString
 
 two:
   name: MyString
-  link: MyString
-  address: MyString
-  description: MyText
+  abbreviation: MyString

@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025154034) do
+ActiveRecord::Schema.define(version: 20161026113929) do
+
+  create_table "program_requirements", force: :cascade do |t|
+    t.integer  "min_age"
+    t.integer  "max_age"
+    t.boolean  "married"
+    t.integer  "income_threshold"
+    t.integer  "assets_threshold"
+    t.boolean  "veteran"
+    t.boolean  "disabled"
+    t.text     "zip_code_list"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "searches", force: :cascade do |t|
     t.integer  "zipcode"
@@ -19,19 +39,9 @@ ActiveRecord::Schema.define(version: 20161025154034) do
     t.boolean  "married"
     t.boolean  "veteran"
     t.boolean  "disabled"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.integer  "zipcode"
-    t.integer  "age"
-    t.integer  "income"
-    t.boolean  "married"
-    t.boolean  "veteran"
-    t.boolean  "disabled"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "assetAmount"
   end
 
 end

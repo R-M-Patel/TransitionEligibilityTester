@@ -4,6 +4,7 @@ class Search < ApplicationRecord
     # Validate zip code against all possible zip codes..
     validates :age, presence: true
     validates :income, presence: true
+    validates :assetAmount, presence: true
     # Validate income input
     # validates :married, presence: true
     # validates :veteran, presence: true
