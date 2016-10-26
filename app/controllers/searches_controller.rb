@@ -42,14 +42,13 @@ class SearchesController < ApplicationController
     else
       d = true
     end
-    
     @search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND married == ? AND veteran == ? AND disabled == ? AND income_threshold >= ? AND assets_threshold >= ?", params[:search][:age], params[:search][:age], m, v, d, params[:search][:income], params[:search][:assetAmount])
   end
   
   private
   
     def search_params
-      params.require(:search).permit(:zipcode, :age, :income, :asset, :married, :veteran, :disabled)
+      params.require(:search).permit(:zipcode, :age, :income, :assetAmount, :married, :veteran, :disabled)
     end
     
 end
