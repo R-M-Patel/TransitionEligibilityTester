@@ -17,15 +17,19 @@ class UserController < ApplicationController
       render 'new'
     end
   end
-	
+  
+
 	def panel
 		@user = User.find(params[:id])
+		
+		@programs = Progam.all
 		
 		@program = Program.new
 		
 		@program_requirements = ProgramRequirement.new
 	
 	end
+
   
   private
   
@@ -34,6 +38,4 @@ class UserController < ApplicationController
     end
 end
 	
-	
-
 	
