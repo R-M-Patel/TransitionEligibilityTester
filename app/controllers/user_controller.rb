@@ -40,9 +40,16 @@ class UserController < ApplicationController
 		redirect_to :action => 'list'
 	end
 	
+	def panel
+		@user = User.find(params[:id])
+		
+		@program = Program.new
+		
+		@program_requirements = ProgramRequirement.new
+	
 end
 
 def user_params
-	params.require(:users).permit(:name, :email, :password, :administrator)
+	params.require(:user).permit(:first_name, :last_name, :email, :password, :administrator)
 end
 	

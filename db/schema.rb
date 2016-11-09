@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109075857) do
+ActiveRecord::Schema.define(version: 20161109151115) do
 
   create_table "program_requirements", force: :cascade do |t|
     t.integer  "min_age"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20161109075857) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "assetAmount"
+    t.integer  "household"
   end
 
   create_table "users", force: :cascade do |t|
