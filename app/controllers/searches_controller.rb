@@ -49,7 +49,7 @@ class SearchesController < ApplicationController
   private
   
     def search_params
-      params.require(:search).permit(:zipcode, :age, :income, :asset, :married, :veteran, :disabled)
+      params.require(:search).permit(:zipcode, :age, :income, :assetAmount, :married, :veteran, :disabled)
     end
     
 end
