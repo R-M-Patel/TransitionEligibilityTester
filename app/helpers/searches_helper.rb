@@ -27,5 +27,4 @@ module SearchesHelper
 		else return income <= @eight
 		end
 	end
-
 end

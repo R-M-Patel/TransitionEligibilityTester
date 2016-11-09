@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20161109151115) do
+=======
+ActiveRecord::Schema.define(version: 20161109120219) do
+>>>>>>> admin-login
 
   create_table "program_requirements", force: :cascade do |t|
     t.integer  "min_age"
@@ -48,11 +52,22 @@ ActiveRecord::Schema.define(version: 20161109151115) do
   end
 
   create_table "users", force: :cascade do |t|
+<<<<<<< HEAD
     t.string  "first_name"
     t.string  "email"
     t.string  "password"
     t.boolean "administrator"
     t.string  "last_name"
+=======
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password"
+    t.boolean  "administrator"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+>>>>>>> admin-login
   end
 
 end
