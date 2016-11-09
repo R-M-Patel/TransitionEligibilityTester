@@ -18,24 +18,23 @@
         
         <div class ="container">
             <div class ="center jumbotron">
-                <h2>All Users</h2>
+                <h2>Welcome, <% @user.first_name %></h2>
             </div>
         </div>
         
         <div class ="container">
             <div class="col-md-6 col-md-offset-3">
-                <% if @users.empty? %>
-                    <h2>There are currently no registered users</h2>
-                <% else %>
-                    <% @users.each do |c| %>
-                        <li><%= link_to c.first_name, {:action => 'show', :id => c.id} %> <%= link_to c.last_name, {:action => 'show', :id => c.id} %></li>
-                    <% end %>
+                <% if @user.administrator %>
+                    <p><%= link_to "Add User", {:action => 'new'} %></p>
                 <% end %>
             </div>
         </div>
 				<div class="container">
 					<div class="center jumbotron">
-						<button><%= link_to "Add User", {:action => 'new'} %></button>
+						<button><%= link_to "Add Program", {:controller => 'programs', :action => 'new'} %></button>
+					</div>
+					<div class="center jumbotron">
+						<button><%= link_to "Add Program", {:controller => 'program_requirement', :action => 'new'} %></button>
 					</div>
 				</div>
     </body>

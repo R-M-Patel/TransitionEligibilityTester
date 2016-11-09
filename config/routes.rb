@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 	patch 'user/update'
 	get 'user/update'
 	get 'user/delete'
+	get '/panel', to: 'user#panel'
   # root 'application#hello'
   
 end

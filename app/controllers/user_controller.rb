@@ -43,13 +43,16 @@ class UserController < ApplicationController
 	def panel
 		@user = User.find(params[:id])
 		
+		@programs = Progam.all
+		
 		@program = Program.new
 		
 		@program_requirements = ProgramRequirement.new
 	
-end
+	end
 
-def user_params
-	params.require(:user).permit(:first_name, :last_name, :email, :password, :administrator)
+	def user_params
+		params.require(:user).permit(:first_name, :last_name, :email, :password, :administrator)
+	end
 end
 	
