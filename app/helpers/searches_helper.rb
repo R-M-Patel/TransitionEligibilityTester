@@ -25,6 +25,6 @@ module SearchesHelper
 		when 7
 			return income <= @seven
 		else return income <= @eight
+		end
 	end
-
 end
