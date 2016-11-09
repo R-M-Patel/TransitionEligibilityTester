@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109052332) do
+ActiveRecord::Schema.define(version: 20161109075857) do
 
   create_table "program_requirements", force: :cascade do |t|
     t.integer  "min_age"
@@ -47,10 +47,11 @@ ActiveRecord::Schema.define(version: 20161109052332) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string  "name"
+    t.string  "first_name"
     t.string  "email"
     t.string  "password"
     t.boolean "administrator"
+    t.string  "last_name"
   end
 
 end
