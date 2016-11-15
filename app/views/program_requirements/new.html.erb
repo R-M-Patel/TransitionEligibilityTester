@@ -1,5 +1,38 @@
-<h1>New Program Requirement</h1>
-
-<%= render 'form', program_requirement: @program_requirement %>
-
-<%= link_to 'Back', program_requirements_path %>
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Program Finder</title>
+    </head>
+    
+    <body>
+        <h1>New Program Requirements for <%= @program.name %></h1>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <%= form_for(@program_requirement) do |f| %>
+                    <%= f.label :max_income, "Max income (Percentage of federal poverty level)" %>
+                    <%= f.number_field :max_income, class: 'form-control' %>
+                    
+                    <%= f.label :min_income, "Minimun income threshold, if applicable -- also as a percentage of federal poverty level" %>
+                    <%= f.number_field :min_income, class: 'form-control' %>
+                    
+										<%= f.label :assets_threshold, "Total assets limit" %>
+                    <%= f.number_field :assets_threshold, class: 'form-control' %>
+										
+                    <%= f.label :min_age, "Minimum age" %>
+                    <%= f.number_field :min_age, class: 'form-control' %>
+                    
+										<%= f.label :max_age, "Maximum age" %>
+                    <%= f.number_field :max_age, class: 'form-control' %>
+                    
+										<%= f.label :zip_code_list, "Eligible zip codes" %>
+                    <%= f.text_field :zip_code_list, class: 'form-control' %>
+										
+                    <%= f.submit "Create Account", class: "btn btn-primary" %>
+                <% end %>
+            </div>
+        </div>
+    </body>
+    
+</html>

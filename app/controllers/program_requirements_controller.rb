@@ -15,6 +15,7 @@ class ProgramRequirementsController < ApplicationController
   # GET /program_requirements/new
   def new
     @program_requirement = ProgramRequirement.new
+		@program = Program.find(params[:id])
   end
 
   # GET /program_requirements/1/edit
@@ -25,6 +26,8 @@ class ProgramRequirementsController < ApplicationController
   # POST /program_requirements.json
   def create
     @program_requirement = ProgramRequirement.new(program_requirement_params)
+		@program = Program.find(params[:id])
+		@program_requirement.program = @program
 
     respond_to do |format|
       if @program_requirement.save
@@ -69,6 +72,6 @@ class ProgramRequirementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def program_requirement_params
-      params.require(:program_requirement).permit(:min_age, :max_age, :married, :income_threshold, :assets_threshold, :veteran, :disabled, :zip_code_list)
+      params.require(:program_requirement).permit(:min_age, :max_age, :married, :max_income, :min_income, :assets_threshold, :veteran, :disabled, :zip_code_list)
     end
 end
