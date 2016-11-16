@@ -44,7 +44,30 @@ class SearchesController < ApplicationController
 			else
 				d = true
 			end
-			@search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND married == ? AND veteran == ? AND disabled == ? AND max_income >= ? AND assets_threshold >= ?", params[:search][:age], params[:search][:age], m, v, d, params[:search][:income], params[:search][:assetAmount])
+			
+			#determine poverty level based on size
+			income = params[:search][:income]
+			poverty = helpers.poverty_level(params[:search][:household])
+			
+			@search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND assets_threshold >= ?", params[:search][:age], params[:search][:age], params[:search][:assetAmount])
+			
+			# calculate true max/min income levels for each program and compare it to the annual income of the patient
+			@search.each do |prg|
+				max = (prg.max_income/100.0) * poverty
+				if !prg.min_income.nil?
+					min = (prg.min_income/100.0) * poverty
+				else
+					min = 0
+				end
+				
+				if max < income.to_f || min > income.to_f
+					@search.delete(prg)
+				end
+			end
+			@programs = []
+			@search.each do |req|
+				@programs.push(Program.find(req.program_id))
+			end
 		else
 			render 'new'
 		end

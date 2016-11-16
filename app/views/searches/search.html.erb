@@ -18,11 +18,12 @@
         
         <div class ="container">
             <div class="col-md-6 col-md-offset-3">
-                <% if @search.empty? %>
+                <% if @programs.empty? %>
                     <h2>NOTHING</h2>
                 <% else %>
-                    <% @search.each do |c| %>
-                        <li><%= c.zip_code_list %></li>
+                   
+										<% @programs.each do |p| %>
+												<li><%= p.name %>, <%= p.abbreviation %></li>
                     <% end %>
                 <% end %>
             </div>
