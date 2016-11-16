@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Program Finder</title>
+    </head>
+    
+    <body>
+        <header class="navbar navbar-fixed-top navbar-inverse">
+            <div class="container">
+                <nav>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><%= link_to "Support",    '#' %></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class ="center jumbotron">
+                <h2>Welcome, <%= @user.first_name %></h2>
+            </div>
+        </div>
+				
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+                <% if @user.administrator %>
+                    <p><%= link_to "Add User", {:action => 'new'} %></p>
+                <% end %>
+            </div>
+        </div>
+				<div class="container">
+					<div class="center jumbotron">
+						<h3>Programs</h3>
+						<table>
+							<thead>
+								<th>Name</th>
+								<th>Abbreviation</th>
+							</thead>
+							
+							<tbody>
+								<% @programs.each do |program| %>
+									<tr>
+										<td><%= program.name %></td>
+										<td><%= program.abbreviation %></td>
+										<td><%= link_to 'Show', program %></td>
+										<td><%= link_to 'Edit', edit_program_path(program) %></td>
+										<td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+						
+						<div>
+							<button><%= link_to "Add Program", {:controller => 'programs', :action => 'new'} %></button>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="container">
+					<div class="center jumbotron">
+						<h3>Program Requirements</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>Min age</th>
+									<th>Max age</th>
+									<th>Married</th>
+									<th>Max Income</th>
+									<th>Min Income</th>
+									<th>Assets threshold</th>
+									<th>Veteran Status Required</th>
+									<th>Disabilty Required</th>
+									<th>Zip code list</th>
+									<th colspan="3"></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<% @requirements.each do |requirement| %>
+									<tr>
+										<td><%= requirement.min_age %></td>
+										<td><%= requirement.max_age %></td>
+										<td><%= requirement.married %></td>
+										<td><%= requirement.max_income %></td>
+										<td><%= requirement.min_income %></td>
+										<td><%= requirement.assets_threshold %></td>
+										<td><%= requirement.veteran %></td>
+										<td><%= requirement.disabled %></td>
+										<td><%= requirement.zip_code_list %></td>
+										<td><%= link_to 'Show', requirement %></td>
+										<td><%= link_to 'Edit', edit_program_requirement_path(requirement) %></td>
+										<td><%= link_to 'Destroy', requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+						<div>
+							<button><%= link_to "Add Program Requirements", {:controller => 'program_requirements', :action => 'new'} %></button>
+						</div>
+					</div>
+				</div>
+				
+			<div class="container">
+				<div class="center jumbotron">
+					<table>
+						<thead>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Admin Privelages?</th>
+						</thead>
+						<tbody>
+							<% @users.each do |user| %>
+								<tr>
+									<td><%= user.first_name %> <%= user.last_name %></td>
+									<td><%= user.email %></td>
+									<td><%= user.administrator %></td>
+									<td><%= link_to 'Show', user %></td>
+									<td><%= link_to 'Edit', edit_user_path(user) %></td>
+									<td><%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure you want to delete this user?'} %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+				
+    </body>
+    
+</html>

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :programs
-  resources :program_requirements
+	resources :program_requirements
+  # resources :program_requirements
   root 'searches#new'
   get   '/root',    to: 'searches#new'
   get   '/result',  to: 'searches#result'
@@ -19,7 +20,8 @@ Rails.application.routes.draw do
   resources :users
   
   get '/new', to: 'programs#new'
-  get '/newpr', to: 'program_requirements#new'
+  get '/newpr/:id', to: 'program_requirements#new'
+	post '/newpr/:id', to: 'program_requirements#create'
 
 	get '/user', to: 'user#list'
 	
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
 	patch 'user/update'
 	get 'user/update'
 	get 'user/delete'
-	get '/panel', to: 'user#panel'
+	get '/panel/:id', to: 'users#panel'
   # root 'application#hello'
   
 end
