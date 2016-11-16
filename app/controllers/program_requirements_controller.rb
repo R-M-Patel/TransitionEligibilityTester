@@ -27,7 +27,7 @@ class ProgramRequirementsController < ApplicationController
   def create
     @program_requirement = ProgramRequirement.new(program_requirement_params)
 		@program = Program.find(params[:id])
-		@program_requirement.programs = @program
+		@program_requirement.program = @program
 
     respond_to do |format|
       if @program_requirement.save

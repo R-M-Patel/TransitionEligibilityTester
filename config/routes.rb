@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :programs
+	resources :program_requirements
   # resources :program_requirements
   root 'searches#new'
   get   '/root',    to: 'searches#new'
