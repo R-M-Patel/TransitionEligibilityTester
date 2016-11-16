@@ -10,7 +10,7 @@
         
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <%= form_for(@program_requirement) do |f| %>
+                <%= form_for @program_requirement, url: {action: "create"} do |f| %>
                     <%= f.label :max_income, "Max income (Percentage of federal poverty level)" %>
                     <%= f.number_field :max_income, class: 'form-control' %>
                     
@@ -29,7 +29,7 @@
 										<%= f.label :zip_code_list, "Eligible zip codes" %>
                     <%= f.text_field :zip_code_list, class: 'form-control' %>
 										
-                    <%= f.submit "Create Account", class: "btn btn-primary" %>
+                    <%= f.submit "Submit", class: "btn btn-primary" %>
                 <% end %>
             </div>
         </div>

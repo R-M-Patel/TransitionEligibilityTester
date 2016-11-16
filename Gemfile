@@ -19,7 +19,6 @@ ruby '2.3.1'
 
 gem 'bcrypt', '3.1.11'
 
-gem 'wdm', '>= 0.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -34,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+platforms :mswin do 
+	gem 'wdm', '>= 0.1.0', :group => [:development, :test]
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.12'

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :programs
-  resources :program_requirements
+  # resources :program_requirements
   root 'searches#new'
   get   '/root',    to: 'searches#new'
   get   '/result',  to: 'searches#result'
@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   resources :users
   
   get '/new', to: 'programs#new'
-  get '/newpr', to: 'program_requirements#new'
+  get '/newpr/:id', to: 'program_requirements#new'
+	post '/newpr/:id', to: 'program_requirements#create'
 
 	get '/user', to: 'user#list'
 	
