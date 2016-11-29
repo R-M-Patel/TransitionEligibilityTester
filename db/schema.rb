@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129165019) do
+ActiveRecord::Schema.define(version: 20161129185217) do
 
   create_table "program_requirements", force: :cascade do |t|
     t.integer  "min_age"
     t.integer  "max_age"
-    t.boolean  "married"
     t.integer  "max_income"
     t.integer  "assets_threshold"
     t.datetime "created_at",                           null: false
@@ -34,13 +33,13 @@ ActiveRecord::Schema.define(version: 20161129165019) do
     t.string   "abbreviation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "link"
   end
 
   create_table "searches", force: :cascade do |t|
     t.integer  "zipcode"
     t.integer  "age"
     t.integer  "income"
-    t.boolean  "married"
     t.boolean  "veteran"
     t.boolean  "disabled"
     t.datetime "created_at",  null: false
