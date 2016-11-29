@@ -49,7 +49,8 @@ class SearchesController < ApplicationController
 			income = params[:search][:income]
 			poverty = helpers.poverty_level(params[:search][:household])
 			
-			@search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND assets_threshold >= ?", params[:search][:age], params[:search][:age], params[:search][:assetAmount])
+			@search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ? AND veteran = ?", params[:search][:age], params[:search][:age], params[:search][:assetAmount], params[:disabled], params[:veteran])
+			
 			
 			# calculate true max/min income levels for each program and compare it to the annual income of the patient
 			@programs = []
