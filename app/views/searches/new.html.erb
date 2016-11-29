@@ -7,48 +7,70 @@
     
     <body>
         <%= render 'layouts/header' %>
-        </br>
-        </br>
-        
         <div class ="container">
             <div class ="center jumbotron">
-                <h1>Eligibility Determiner</h1>
-                <h2>Used to determine the eligibility of xxxxxx programs.</h2>
+                <h1>Medicare Savings Program Determiner</h1>
+                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum, odio et commodo consequat, ante ante cursus ipsum, sed egestas dui turpis sed sem.</h2>
             </div>
         </div>
         
         <div class="container">
-            <div class="col-md-6 col-md-offset-3">
-                <%= form_for(@search, url: search_path) do |f| %>
-                    <%= render 'shared/error_messages' %>
-                    <%= f.label :zipcode %>
-                    <%= f.number_field :zipcode, class: 'form-control' %>
-                    </br>
-                    <%= f.label :age %>
-                    <%= f.number_field :age, class: 'form-control' %>
-                    </br>
-                    <%= f.label :income %>
-                    <%= f.number_field :income, class: 'form-control' %>
-                    </br>
-                    <%= f.label :assetAmount %>
-                    <%= f.number_field :assetAmount, class: 'form-control' %>
-                    </br>
-                    <%= f.label :married %>
-                    <%= f.check_box :married, class: 'form-control' %>
-                    </br>
-										<%= f.label :household %>
-										<%= f.number_field :household, class: 'form-control' %>
-										</br>
-                    <%= f.label :veteran %>
-                    <%= f.check_box :veteran, class: 'form-control' %>
-                    </br>
-                    <%= f.label :disabled %>
-                    <%= f.check_box :disabled, class: 'form-control' %>
-                    </br>
-                    <%= f.submit "Search", class: "btn btn-primary" %>
-                <% end %>
+            <h3>Check your eligibility</h5>
+            <hr>
+            <div class="col-md-6 form-inline">
+                <div>
+                    <h4>Fill the following form to find out what Medicare savings programs you may qualify for.</h4>
+                </div>
+                <div class="search-input">
+                    <%= form_for(@search, url: search_path) do |f| %>
+                        <%= render 'shared/error_messages' %>
+                        <%= f.label :zipcode %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%= f.number_field :zipcode, class: 'form-control input-restriction' %>
+                        </br>
+                        <%= f.label :age %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%= f.number_field :age, class: 'form-control input-restriction' %>
+                        </br>
+                        <%= f.label :income, 'Monthly Income' %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%= f.number_field :income, class: 'form-control input-restriction' %>
+                        </br>
+                        <%= f.label :assetAmount, 'Amount in Assets' %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <%= f.number_field :assetAmount, class: 'form-control input-restriction' %>
+                        </br>
+    					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
+    					<%= f.number_field :household, class: 'form-control input-restriction' %>
+    					</br>
+    					Do you currently hold veteran status?
+    					<%= radio_button_tag(:veteran, "veteran_no") %>
+                        <%= label_tag(:veteran_no, "No") %>
+                        <%= radio_button_tag(:veteran, "veteran_yes") %>
+                        <%= label_tag(:veteran_yes, "Yes") %>
+                        </br>
+                        Do you currently hold disability status?
+    					<%= radio_button_tag(:disabled, "disabled_no") %>
+                        <%= label_tag(:disabled_no, "No") %>
+                        <%= radio_button_tag(:disabled, "disabled_yes") %>
+                        <%= label_tag(:disabled_yes, "Yes") %>
+                        </br>
+                        <%= f.submit "Search", class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            </div>
+            <!--<div class="col-md-1"></div>-->
+            <div class="col-md-6">
+                <div class="sidebar-veteran">
+                    <h4>Are you a veteran?</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum, odio et commodo consequat, ante ante cursus ipsum, sed egestas dui turpis sed sem.</p>
+                    <a href="bhasbask">Learn More >></a>
+                </div>
+                <div class="sidebar-something">
+                    <h4>Pretty sure we can think of something that can go here</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum, odio et commodo consequat, ante ante cursus ipsum, sed egestas dui turpis sed sem.</p>
+                    <a href="bhasbask">Learn More >></a>
+                </div>
             </div>
         </div>
+        
+        <%= render 'layouts/footer' %>
     </body>
     
 </html>

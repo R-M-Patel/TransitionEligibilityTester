@@ -37,3 +37,30 @@ centre {
     color: $state-danger-text;
   }
 }
+
+.search-input {
+  padding: 15px;
+  text-align: right;
+}
+
+.sidebar-veteran {
+  margin: 0 -15px 15px;
+  padding: 15px;
+  background-color: #ffcc66;
+  border-radius: 4px;
+}
+
+.sidebar-something {
+  margin: 0 -15px 15px;
+  padding: 15px;
+  background-color: #cfd6d3;
+  border-radius: 4px;
+}
+
+.input-restriction {
+  width: 200px;
+}
+
+.footer-custom {
+  // color: white;
+}
