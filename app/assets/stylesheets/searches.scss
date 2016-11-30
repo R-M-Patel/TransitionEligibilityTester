@@ -53,6 +53,13 @@ centre {
 .sidebar-something {
   margin: 0 -15px 15px;
   padding: 15px;
+  background-color: #72a8ff;
+  border-radius: 4px;
+}
+
+.sidebar-something-else {
+  margin: 0 -15px 15px;
+  padding: 15px;
   background-color: #cfd6d3;
   border-radius: 4px;
 }
@@ -62,7 +69,11 @@ centre {
 }
 
 .footer-custom {
-  // color: white;
+  margin-top: 10px;
+}
+
+.footer-text {
+  color: #5c616b;
 }
 
 // 
