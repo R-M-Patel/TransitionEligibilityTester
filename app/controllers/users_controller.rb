@@ -48,6 +48,27 @@ class UsersController < ApplicationController
 		end
 	end
 	
+	def promote
+		@user = User.find(params[:id])
+		@user.administrator = true
+		
+		if @user.save
+			redirect_to action: "panel", id: session[:user_id]
+		else
+			flash.now[:danger] = 'Promotion failed!'
+			redirect_back fallback_location: root_url
+		end
+	end
+	
+	def destroy
+		@user = User.find(params[:id])
+		@user.destroy
+		respond_to do |format|
+      format.html { redirect_back fallback_location: root_url, notice: 'Program requirement was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+	
   private
   
     def user_params

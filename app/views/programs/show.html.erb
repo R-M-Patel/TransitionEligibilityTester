@@ -1,18 +1,29 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+	<body>
+		<%= render 'layouts/header' %>
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @program.name %>
-</p>
+		<p>
+			<strong>Name:</strong>
+			<%= @program.name %>
+		</p>
 
-<p>
-  <strong>Abbreviation:</strong>
-  <%= @program.abbreviation %>
-</p>
+		<p>
+			<strong>Abbreviation:</strong>
+			<%= @program.abbreviation %>
+		</p>
 
-<%= link_to 'Edit', edit_program_path(@program) %> |
-<%= link_to 'Back', programs_path %>
+		<p>
+			<strong>Link:</strong>
+			<%= @program.link %>
+		</p>
 
-<div>
-	<p><%= link_to "Add Eligibility Requirements for " + @program.name, {:controller => 'program_requirements', :action => 'new'} %></p>
-</div>
+		<%= link_to 'Edit', edit_program_path(@program) %> |
+		<%= link_to 'Back', programs_path %>
+
+		<div>
+			<p><%= link_to "Add Eligibility Requirements for " + @program.name, {:controller => 'program_requirements', :action => 'new'} %></p>
+		</div>
+	</body>
+</html>

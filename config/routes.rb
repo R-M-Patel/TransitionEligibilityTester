@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 	get 'user/update'
 	get 'user/delete'
 	get '/panel/:id', to: 'users#panel'
+	post '/user/:id/promote', to: 'users#promote'
+	get '/user/:id/promote', to: 'users#show'
   # root 'application#hello'
   
 end
