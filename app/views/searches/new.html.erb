@@ -33,12 +33,12 @@
                         </br>
                         <%= f.label :income, 'Annual Income' %>&nbsp&nbsp&nbsp&nbsp&nbsp
                             <span id="help_income"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
-                            <div id="help_income_show">Income Help text here</div>
+                            <div id="help_income_show">Gross annual income. The ammount of money you made last year before taxes</div>
                         <%= f.number_field :income, class: 'form-control input-restriction' %>
                         </br>
                         <%= f.label :assetAmount, 'Amount in Assets' %>&nbsp&nbsp&nbsp&nbsp&nbsp
                             <span id="help_asset"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
-                            <div id="help_asset_show">Asset Help text here</div>
+                            <div id="help_asset_show">Total assets is the monetary value of all liquidatable possesions</div>
                         <%= f.number_field :assetAmount, class: 'form-control input-restriction' %>
                         </br>
     					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
