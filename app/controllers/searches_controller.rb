@@ -18,15 +18,6 @@ class SearchesController < ApplicationController
 		@search.household = 1
   end
   
-  def create
-    @search = Search.new(search_params)
-    if @search.save
-      # Handle a successful save.
-    else
-      render 'new'
-    end
-  end
-  
   def search
 		@search = Search.new(search_params)
 		@search.disabled = params[:disabled]
@@ -34,6 +25,12 @@ class SearchesController < ApplicationController
     @search.renal = params[:renal]
     @search.als = params[:als]
 		if @search.save
+			
+			@programs = []
+			if @search.renal == true
+				@programs = Program.all
+				return
+			end
 			
 			#determine poverty level based on size
 			income = params[:search][:income]
