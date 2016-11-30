@@ -21,10 +21,10 @@
                 <% if @programs.empty? %>
                     <h2>NOTHING</h2>
                 <% else %>
-                   
-										<% @programs.each do |p| %>
-												<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
-                    <% end %>
+									<% @programs.each do |p| %>
+											<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
+									<% end %>
+									<a href="#" onClick="window.print();return false;">Print Results</a>
                 <% end %>
             </div>
         </div>
