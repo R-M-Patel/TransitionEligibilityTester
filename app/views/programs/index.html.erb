@@ -16,6 +16,8 @@
       <tr>
         <td><%= program.name %></td>
         <td><%= program.abbreviation %></td>
+				<td><%= program.description %></td>
+				<td><%= program.link %></td>
         <td><%= link_to 'Show', program %></td>
         <td><%= link_to 'Edit', edit_program_path(program) %></td>
         <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
