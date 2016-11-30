@@ -22,7 +22,7 @@
                     <h2>NOTHING</h2>
                 <% else %>
 									<% @programs.each do |p| %>
-											<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
+											<li><%= p.name %>, <%= link_to p.abbreviation, p.link %></li>
 											<p><%= p.description %></p>
 									<% end %>
 									<div>
