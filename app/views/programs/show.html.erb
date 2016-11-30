@@ -12,3 +12,7 @@
 
 <%= link_to 'Edit', edit_program_path(@program) %> |
 <%= link_to 'Back', programs_path %>
+
+<div>
+	<p><%= link_to "Add Eligibility Requirements for " + @program.name, {:controller => 'program_requirements', :action => 'new'} %></p>
+</div>
