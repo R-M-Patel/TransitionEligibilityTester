@@ -25,7 +25,7 @@ class SearchesController < ApplicationController
     @search.renal = params[:renal]
     @search.als = params[:als]
 		if @search.save
-			
+
 			@programs = []
 			if (@search.renal == true) || (@search.als == true)
 				@programs = Program.all
@@ -36,8 +36,17 @@ class SearchesController < ApplicationController
 			income = params[:search][:income]
 			poverty = helpers.poverty_level(params[:search][:household])
 			
-			@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ? AND veteran = ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount], params[:search][:disabled], params[:search][:veteran])
+			if (!@search.veteran && !@search.disabled)
+				@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ? AND veteran = ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount], @search.disabled, @search.veteran)
 			
+			elsif (!@search.veteran)
+				@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND veteran = ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount], @search.veteran)				
+			
+			elsif (!@search.disabled)
+				@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount], @search.disabled)				
+			else
+				@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount])
+			end
 			
 			# calculate true max/min income levels for each program and compare it to the annual income of the patient
 			@programs = []
