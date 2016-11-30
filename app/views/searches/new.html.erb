@@ -51,6 +51,18 @@
                         <%= radio_button_tag(:disabled, true) %>
                         <%= label_tag(:disabled_true, "Yes") %>
                         </br>
+						Do you have End Stage Renal Disease?
+    					<%= radio_button_tag(:renal, false) %>
+                        <%= label_tag(:renal_false, "No") %>
+                        <%= radio_button_tag(:renal, true) %>
+                        <%= label_tag(:renal_true, "Yes") %>
+						</br>
+						Do you have ALS?
+    					<%= radio_button_tag(:als, false) %>
+                        <%= label_tag(:als_false, "No") %>
+                        <%= radio_button_tag(:als, true) %>
+                        <%= label_tag(:als_true, "Yes") %>
+						</br>
                         <%= f.submit "Search", class: "btn btn-primary" %>
                     <% end %>
                 </div>
