@@ -47,16 +47,16 @@
     					<%= f.number_field :household, class: 'form-control input-restriction' %>
     					</br>
     					Do you currently hold veteran status?
-    					    <span id="help_veteran">?</span>
-                            <div id="help_veteran_show">Help text here</div>
+    					    <span id="help_veteran"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
+                            <div id="help_veteran_show">Check yes if you have served or are currently serving in the U.S. Military</div>
     					<%= radio_button_tag(:veteran, false) %>
                         <%= label_tag(:veteran_false, "No") %>
                         <%= radio_button_tag(:veteran, true) %>
                         <%= label_tag(:veteran_true, "Yes") %>
                         </br>
                         Do you currently hold disability status?
-                            <span id="help_disabled">?</span>
-                            <div id="help_disabled_show">Help text here</div>
+                            <span id="help_disabled"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
+                            <div id="help_disabled_show">To hold disability status you have to have collected disability benefits for the previous two or more years</div>
     					<%= radio_button_tag(:disabled, false) %>
                         <%= label_tag(:disabled, "No") %>
                         <%= radio_button_tag(:disabled, true) %>

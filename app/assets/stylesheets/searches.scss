@@ -104,25 +104,25 @@ centre {
 }
 
 #help_veteran_show {
-    height: 50px;
-    width: 200px;
+    height: 60px;
+    width: 210px;
     text-align: center;
     vertical-align:middle;
     background-color: green;
     color: white;
     display: none;
-    // padding-top: 8px;
+    padding-top: 2px;
     position: absolute;
 }
 
 #help_disabled_show {
-    height: 50px;
-    width: 200px;
+    height: 80px;
+    width: 210px;
     text-align: center;
     vertical-align:middle;
     background-color: green;
     color: white;
     display: none;
-    // padding-top: 8px;
+		padding-top: 2px;
     position: absolute;
 }
