@@ -32,17 +32,17 @@
                         <%= f.number_field :age, class: 'form-control input-restriction' %>
                         </br>
                         <%= f.label :income, 'Annual Income' %>&nbsp&nbsp&nbsp&nbsp&nbsp
-                            <span id="help_income">?</span>
+                            <span id="help_income"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
                             <div id="help_income_show">Income Help text here</div>
                         <%= f.number_field :income, class: 'form-control input-restriction' %>
                         </br>
                         <%= f.label :assetAmount, 'Amount in Assets' %>&nbsp&nbsp&nbsp&nbsp&nbsp
-                            <span id="help_asset">?</span>
+                            <span id="help_asset"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
                             <div id="help_asset_show">Asset Help text here</div>
                         <%= f.number_field :assetAmount, class: 'form-control input-restriction' %>
                         </br>
     					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
-    					    <span id="help_household">?</span>
+    					    <span id="help_household"><%= image_tag("help-icon-12.png", size: "15", :alt => "help") %></span>
                             <div id="help_household_show">A household contains a tax filer, the filer's spouse, and his/her tax dependents.</div>
     					<%= f.number_field :household, class: 'form-control input-restriction' %>
     					</br>

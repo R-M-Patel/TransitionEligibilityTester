@@ -35,11 +35,6 @@ class UsersController < ApplicationController
 	
 	def update
 		@user = User.find(params[:id])
-		# @user.first_name = params[:first_name]
-		# @user.last_name = params[:last_name]
-		# @user.email = params[:email]
-		# @user.administrator = params[:administrator]
-		# render :text => params.inspect
 		if @user.update_attributes(user_params)
 			redirect_to root_url, notice: 'User successfully updated!'
 		else
