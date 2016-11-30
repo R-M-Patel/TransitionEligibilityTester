@@ -22,15 +22,15 @@
   </div>
 
   <div class="field">
-    <%= f.label :married %>
-    <%= f.check_box :married %>
+    <%= f.label :max_income %>
+    <%= f.number_field :max_income %>
   </div>
 
-  <div class="field">
-    <%= f.label :income_threshold %>
-    <%= f.number_field :income_threshold %>
+	<div class="field">
+    <%= f.label :min_income %>
+    <%= f.number_field :min_income %>
   </div>
-
+	
   <div class="field">
     <%= f.label :assets_threshold %>
     <%= f.number_field :assets_threshold %>
@@ -47,8 +47,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :zip_code_list %>
-    <%= f.text_area :zip_code_list %>
+    <%= f.label :zip_code_range_start %>
+    <%= f.number_field :zip_code_range_start %>
+  </div>
+	
+	<div class="field">
+    <%= f.label :zip_code_range_end %>
+    <%= f.number_field :zip_code_range_end %>
   </div>
 
   <div class="actions">

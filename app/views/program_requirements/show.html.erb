@@ -13,8 +13,8 @@
 </p>
 
 <p>
-  <strong>Married:</strong>
-  <%= @program_requirement.married %>
+	<strong>Min Income:</strong>
+	<%= @program_requirement.max_income %>
 </p>
 
 <p>
@@ -39,8 +39,8 @@
 </p>
 
 <p>
-  <strong>Zip code list:</strong>
-  <%= @program_requirement.zip_code_list %>
+  <strong>Zip code range:</strong>
+  <%= @program_requirement.zip_code_range_start %> - <%= @program_requirement.zip_code_range_end %>
 </p>
 
 <%= link_to 'Edit', edit_program_requirement_path(@program_requirement) %> |

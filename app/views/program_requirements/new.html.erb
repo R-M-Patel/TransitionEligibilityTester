@@ -26,8 +26,13 @@
 										<%= f.label :max_age, "Maximum age" %>
                     <%= f.number_field :max_age, class: 'form-control' %>
                     
-										<%= f.label :zip_code_list, "Eligible zip codes" %>
-                    <%= f.text_field :zip_code_list, class: 'form-control' %>
+										Range of eligible zip codes
+										
+										<%= f.label :zip_code_range_start, "Range start point" %>
+                    <%= f.text_field :zip_code_range_start, class: 'form-control' %>
+										
+										<%= f.label :zip_code_range_end, "Range end point" %>
+                    <%= f.text_field :zip_code_range_end, class: 'form-control' %>
 										
                     <%= f.submit "Submit", class: "btn btn-primary" %>
                 <% end %>

@@ -18,12 +18,18 @@
         
         <div class ="container">
             <div class="col-md-6 col-md-offset-3">
+						<%# **** TEST OUTPUT **** %>
+							<p>Test output: Search results</p>
+							<%= @search.each do |s| %>
+								<p><%= s.assets_threshold %>
+							<% end %>
+						<%# **** END OF	 DEBUGGING CODE **** %>
                 <% if @programs.empty? %>
                     <h2>NOTHING</h2>
                 <% else %>
                    
 										<% @programs.each do |p| %>
-												<li><%= p.name %>, <%= p.abbreviation %></li>
+												<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
                     <% end %>
                 <% end %>
             </div>
