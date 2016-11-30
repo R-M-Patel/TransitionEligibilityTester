@@ -9,8 +9,11 @@
         <%= render 'layouts/header' %>
         <div class ="container">
             <div class ="center jumbotron">
-                <h1>Medicare Savings Program Determiner</h1>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum, odio et commodo consequat, ante ante cursus ipsum, sed egestas dui turpis sed sem.</h2>
+                <h1>Medicare Program Matcher</h1>
+                <h2>Use the form on this page to quickly determine what medicare programs for which you qualify.</h2>
+				<h2>Once you determine your eligibility, use the provided resources to learn more about each program.</h2>
+				<h2>If you have end-stage renal disease, ALS, are disabled or are a veteran, this site will help direct you to the appropriate resources as well.</h2>
+				<h2>
             </div>
         </div>
         
@@ -19,7 +22,7 @@
             <hr>
             <div class="col-md-6 form-inline">
                 <div>
-                    <h4>Fill the following form to find out what Medicare savings programs you may qualify for.</h4>
+                    <h4>Check for Medicare program eligibility by filling in the following form.</h4>
                 </div>
                 <div class="search-input">
                     <%= form_for(@search, url: search_path) do |f| %>

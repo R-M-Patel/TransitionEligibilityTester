@@ -43,6 +43,18 @@ class SearchesController < ApplicationController
 				v = params[:veteran]
 			end
 			
+			if params[:als].nil?
+				a = 'false'
+			else
+				a = params[:als]
+			end
+			
+			if params[:renal].nil?
+				r = 'false'
+			else
+				r = params[:renal]
+			end
+			
 			#determine poverty level based on size
 			income = params[:search][:income]
 			poverty = helpers.poverty_level(params[:search][:household])
