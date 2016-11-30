@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130091824) do
+ActiveRecord::Schema.define(version: 20161130131723) do
 
   create_table "program_requirements", force: :cascade do |t|
     t.integer  "min_age"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20161130091824) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "link"
+    t.text     "description"
   end
 
   create_table "searches", force: :cascade do |t|
