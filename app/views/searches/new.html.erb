@@ -3,6 +3,7 @@
     
     <head>
         <title>Program Finder</title>
+        <%= javascript_include_tag 'searches' %>
     </head>
     
     <body>
@@ -31,21 +32,31 @@
                         <%= f.number_field :age, class: 'form-control input-restriction' %>
                         </br>
                         <%= f.label :income, 'Annual Income' %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span id="help_income">?</span>
+                            <div id="help_income_show">Income Help text here</div>
                         <%= f.number_field :income, class: 'form-control input-restriction' %>
                         </br>
                         <%= f.label :assetAmount, 'Amount in Assets' %>&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <span id="help_asset">?</span>
+                            <div id="help_asset_show">Asset Help text here</div>
                         <%= f.number_field :assetAmount, class: 'form-control input-restriction' %>
                         </br>
     					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
+    					    <span id="help_household">?</span>
+                            <div id="help_household_show">Help text here</div>
     					<%= f.number_field :household, class: 'form-control input-restriction' %>
     					</br>
     					Do you currently hold veteran status?
+    					    <span id="help_veteran">?</span>
+                            <div id="help_veteran_show">Help text here</div>
     					<%= radio_button_tag(:veteran, false) %>
                         <%= label_tag(:veteran_false, "No") %>
                         <%= radio_button_tag(:veteran, true) %>
                         <%= label_tag(:veteran_true, "Yes") %>
                         </br>
                         Do you currently hold disability status?
+                            <span id="help_disabled">?</span>
+                            <div id="help_disabled_show">Help text here</div>
     					<%= radio_button_tag(:disabled, false) %>
                         <%= label_tag(:disabled_false, "No") %>
                         <%= radio_button_tag(:disabled, true) %>

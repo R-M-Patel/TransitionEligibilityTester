@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161129185217) do
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "min_income"
+    t.string   "name"
     t.integer  "program_id"
     t.integer  "zip_code_range_start"
     t.integer  "zip_code_range_end"
