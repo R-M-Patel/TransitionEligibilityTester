@@ -36,15 +36,27 @@
     <%= f.number_field :assets_threshold %>
   </div>
 
-  <div class="field">
-    <%= f.label :veteran %>
-    <%= f.check_box :veteran %>
-  </div>
-
-  <div class="field">
-    <%= f.label :disabled %>
-    <%= f.check_box :disabled %>
-  </div>
+	<div class="field">
+		<strong>Veteran Status Required</strong>
+		</br>
+		<strong>Current status: <%= program_requirement.veteran %></strong>
+		</br>
+		<%= radio_button_tag(:veteran, false) %>
+		<%= label_tag(:veteran_false, "No") %>
+		<%= radio_button_tag(:veteran, true) %>
+		<%= label_tag(:veteran_true, "Yes") %>
+		</br>
+	</div>
+	<iv class="field">
+	<strong>Disability Required -- Patient has to have been collecting disability benefits for at least 2 years</strong>
+	</br>
+		<strong>Current status: <%= program_requirement.disabled %></strong>
+	</br>
+	<%= radio_button_tag(:disabled, false) %>
+	<%= label_tag(:disabled_false, "No") %>
+	<%= radio_button_tag(:disabled, true) %>
+	<%= label_tag(:disabled_true, "Yes") %>
+	</br>
 
   <div class="field">
     <%= f.label :zip_code_range_start %>

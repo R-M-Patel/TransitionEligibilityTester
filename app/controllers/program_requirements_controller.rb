@@ -28,6 +28,9 @@ class ProgramRequirementsController < ApplicationController
     @program_requirement = ProgramRequirement.new(program_requirement_params)
 		@program = Program.find(params[:id])
 		@program_requirement.program = @program
+		
+		@program_requirement.disabled = params[:disabled]
+		@program_requirement.veteran = params[:veteran]
 
     respond_to do |format|
       if @program_requirement.save
@@ -43,9 +46,14 @@ class ProgramRequirementsController < ApplicationController
   # PATCH/PUT /program_requirements/1
   # PATCH/PUT /program_requirements/1.json
   def update
-		
+		if !@program_requirement.veteran.nil?
+			@program_requirement.veteran = params[:veteran]
+		end
+		if !@program_requirement.disabled.nil?
+			@program_requirement.disabled = params[:disabled]
+		end
     respond_to do |format|
-      if @program_requirement.update(program_requirement_params)
+      if @program_requirement.update_attributes(program_requirement_params)
         format.html { redirect_to @program_requirement, notice: 'Program requirement was successfully updated.' }
         format.json { render :show, status: :ok, location: @program_requirement }
       else
