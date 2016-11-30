@@ -24,7 +24,9 @@
 									<% @programs.each do |p| %>
 											<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
 									<% end %>
-									<a href="#" onClick="window.print();return false;">Print Results</a>
+									<div>
+										<button onClick="window.print();return false;">Print Results</button>
+									</div>
                 <% end %>
             </div>
         </div>
