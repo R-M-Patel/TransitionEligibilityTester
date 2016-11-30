@@ -34,6 +34,22 @@
 										<%= f.label :zip_code_range_end, "Range end point" %>
                     <%= f.text_field :zip_code_range_end, class: 'form-control' %>
 										
+										<strong>Veteran Status Required</strong>
+										</br>
+										<%= radio_button_tag(:veteran, false) %>
+										<%= label_tag(:veteran_false, "No") %>
+										<%= radio_button_tag(:veteran, true) %>
+										<%= label_tag(:veteran_true, "Yes") %>
+										</br>
+										
+										<strong>Disability Required -- Patient has to have been collecting disability benefits for at least 2 years</strong>
+										</br>
+										<%= radio_button_tag(:disabled, false) %>
+										<%= label_tag(:disabled_false, "No") %>
+										<%= radio_button_tag(:disabled, true) %>
+										<%= label_tag(:disabled_true, "Yes") %>
+										</br>
+										
                     <%= f.submit "Submit", class: "btn btn-primary" %>
                 <% end %>
             </div>

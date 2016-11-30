@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+		# all new users are not admins by default
+		@user.administrator = false
     if @user.save
       log_in @user
       redirect_to @user
@@ -25,11 +27,6 @@ class UsersController < ApplicationController
 		@requirements = ProgramRequirement.all
 		
 		@users = User.all
-		
-		# @program = Program.new
-		
-		# @program_requirements = ProgramRequirement.new
-	
 	end
 	
 	def edit
@@ -38,6 +35,10 @@ class UsersController < ApplicationController
 	
 	def update
 		@user = User.find(params[:id])
+		# @user.first_name = params[:first_name]
+		# @user.last_name = params[:last_name]
+		# @user.email = params[:email]
+		# @user.administrator = params[:administrator]
 		if @user.update_attributes(user_params)
 			redirect_to root_url, notice: 'User successfully updated!'
 		else
@@ -49,6 +50,6 @@ class UsersController < ApplicationController
   private
   
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :email, :administrator, :password, :password_confirmation)
     end
 end
