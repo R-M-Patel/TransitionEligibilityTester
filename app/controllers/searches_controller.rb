@@ -27,7 +27,7 @@ class SearchesController < ApplicationController
 		if @search.save
 			
 			@programs = []
-			if @search.renal == true
+			if (@search.renal == true) || (@search.als == true)
 				@programs = Program.all
 				return
 			end
