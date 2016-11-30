@@ -10,8 +10,8 @@
         <%= render 'layouts/header' %>
         <div class ="container">
             <div class ="center jumbotron">
-                <h1>Medicare Savings Program Determiner</h1>
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum, odio et commodo consequat, ante ante cursus ipsum, sed egestas dui turpis sed sem.</h2>
+                <h1>Medicare Savings Program Matcher</h1>
+                <h2>Use the form on this page to quickly determine what medicare programs for which you qualify.</h2>
             </div>
         </div>
         
@@ -43,7 +43,7 @@
                         </br>
     					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
     					    <span id="help_household">?</span>
-                            <div id="help_household_show">Help text here</div>
+                            <div id="help_household_show">A household contains a tax filer, the filer's spouse, and his/her tax dependents.</div>
     					<%= f.number_field :household, class: 'form-control input-restriction' %>
     					</br>
     					Do you currently hold veteran status?
@@ -61,6 +61,18 @@
                         <%= label_tag(:disabled_false, "No") %>
                         <%= radio_button_tag(:disabled, true) %>
                         <%= label_tag(:disabled_true, "Yes") %>
+                        </br>
+                        Do you have End Stage Renal Disease?
+                        <%= radio_button_tag(:renal, false) %>
+                        <%= label_tag(:renal_false, "No") %>
+                        <%= radio_button_tag(:renal, true) %>
+                        <%= label_tag(:renal_true, "Yes") %>
+                        </br>
+                        Do you have Amyotrophic Lateral Sclerosis?
+                        <%= radio_button_tag(:als, false) %>
+                        <%= label_tag(:als_false, "No") %>
+                        <%= radio_button_tag(:als, true) %>
+                        <%= label_tag(:als_true, "Yes") %>
                         </br>
                         <%= f.submit "Search", class: "btn btn-primary" %>
                     <% end %>
