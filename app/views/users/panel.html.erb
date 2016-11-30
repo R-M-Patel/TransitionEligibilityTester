@@ -22,17 +22,12 @@
             </div>
         </div>
 				
-        <div class="container">
-            <div class="col-md-6 col-md-offset-3">
-                <% if @user.administrator %>
-                    <p><%= link_to "Add User", {:action => 'new'} %></p>
-                <% end %>
-            </div>
-        </div>
 				<div class="container">
 					<div class="center jumbotron">
 						<h3>Programs</h3>
-						<table>
+						<button onClick="this.nextElementSibling.style.display == 'block' ? this.nextElementSibling.style.display='none' : this.nextElementSibling.style.display='block';">Show Programs</button>
+						<%# this.nextElementSibling.style.display == 'none' ? this.nextElementSibling.style.display='inline' : this.nextElementSibling.style.display='none'; %>
+						<table id="hiddenPrograms">
 							<thead>
 								<th>ID</th>
 								<th>Name</th>
@@ -65,7 +60,8 @@
 				<div class="container">
 					<div class="center jumbotron">
 						<h3>Program Requirements</h3>
-						<table>
+						<button onClick="this.nextElementSibling.style.display == 'block' ? this.nextElementSibling.style.display='none' : this.nextElementSibling.style.display='block';">Show Eligibility Requirements</button>
+						<table id="hiddenRequirements">
 							<thead>
 								<tr>
 									<th>Program</th>
@@ -103,31 +99,36 @@
 						<%# Removed 'add program requirements' button. Users should add requirements immediately after adding a program %>
 					</div>
 				</div>
-				
-			<div class="container">
-				<div class="center jumbotron">
-					<table>
-						<thead>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Admin Privelages?</th>
-						</thead>
-						<tbody>
-							<% @users.each do |user| %>
-								<tr>
-									<td><%= user.first_name %> <%= user.last_name %></td>
-									<td><%= user.email %></td>
-									<td><%= user.administrator %></td>
-									<td><%= link_to 'Show', user %></td>
-									<td><%= link_to 'Edit', edit_user_path(user) %></td>
-									<td><%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure you want to delete this user?'} %></td>
-								</tr>
-							<% end %>
-						</tbody>
-					</table>
+			<% if @user.administrator %>	
+				<div class="container">
+					<div class="center jumbotron">
+						<h3>Users</h3>
+						<button onClick="this.nextElementSibling.style.display == 'block' ? this.nextElementSibling.style.display='none' : this.nextElementSibling.style.display='block';">Show Users</button>
+						<table id="hiddenUsers">
+							<thead>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Admin Privelages?</th>
+							</thead>
+							<tbody>
+								<% @users.each do |user| %>
+									<tr>
+										<td><%= user.first_name %> <%= user.last_name %></td>
+										<td><%= user.email %></td>
+										<td><%= user.administrator %></td>
+										<td><%= link_to 'Show', user %></td>
+										<td><%= link_to 'Edit', edit_user_path(user) %></td>
+										<td><%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure you want to delete this user?'} %></td>
+									</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+          <div>
+            <button><%= link_to "Add User", {:action => 'new'} %></button>
+					</div>
 				</div>
-			</div>
-				
+			<% end %>	
     </body>
     
 </html>
