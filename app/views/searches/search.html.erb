@@ -23,6 +23,7 @@
                 <% else %>
 									<% @programs.each do |p| %>
 											<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
+											<p><%= p.description %></p>
 									<% end %>
 									<div>
 										<button onClick="window.print();return false;">Print Results</button>
