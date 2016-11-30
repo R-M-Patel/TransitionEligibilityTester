@@ -43,6 +43,7 @@ class ProgramRequirementsController < ApplicationController
   # PATCH/PUT /program_requirements/1
   # PATCH/PUT /program_requirements/1.json
   def update
+		
     respond_to do |format|
       if @program_requirement.update(program_requirement_params)
         format.html { redirect_to @program_requirement, notice: 'Program requirement was successfully updated.' }
@@ -72,6 +73,6 @@ class ProgramRequirementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def program_requirement_params
-      params.require(:program_requirement).permit(:min_age, :max_age, :married, :max_income, :min_income, :assets_threshold, :veteran, :disabled, :zip_code_list)
+      params.require(:program_requirement).permit(:min_age, :max_age, :max_income, :min_income, :assets_threshold, :veteran, :disabled, :zip_code_range_start, :zip_code_range_end)
     end
 end

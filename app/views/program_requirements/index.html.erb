@@ -7,13 +7,12 @@
     <tr>
       <th>Min age</th>
       <th>Max age</th>
-      <th>Married</th>
       <th>Max Income</th>
 			<th>Min Income</th>
       <th>Assets threshold</th>
       <th>Veteran</th>
       <th>Disabled</th>
-      <th>Zip code list</th>
+      <th>Zip code Range</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,13 +22,12 @@
       <tr>
         <td><%= program_requirement.min_age %></td>
         <td><%= program_requirement.max_age %></td>
-        <td><%= program_requirement.married %></td>
         <td><%= program_requirement.max_income %></td>
 				<td><%= program_requirement.min_income %></td>
         <td><%= program_requirement.assets_threshold %></td>
         <td><%= program_requirement.veteran %></td>
         <td><%= program_requirement.disabled %></td>
-        <td><%= program_requirement.zip_code_list %></td>
+        <td><%= program_requirement.zip_code_range_start %> - <%= program_requirement.zip_code_range_end %></td>
         <td><%= link_to 'Show', program_requirement %></td>
         <td><%= link_to 'Edit', edit_program_requirement_path(program_requirement) %></td>
         <td><%= link_to 'Destroy', program_requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>

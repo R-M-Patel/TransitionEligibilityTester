@@ -15,6 +15,7 @@ class SearchesController < ApplicationController
   
   def new
     @search = Search.new
+		@search.household = 1
   end
   
   def create
@@ -29,27 +30,24 @@ class SearchesController < ApplicationController
   def search
 		@search = Search.new(search_params)
 		if @search.save
-			if params[:search][:married] == "0"
-				m = false
+		
+			if params[:disabled].nil?
+				d = 'false'
 			else
-				m = true
+				d = params[:disabled]
 			end
-			if params[:search][:veteran] == "0"
-				v = false
+			
+			if params[:veteran].nil?
+				v = 'false'
 			else
-				v = true
-			end
-			if params[:search][:disabled] == "0"
-				d = false
-			else
-				d = true
+				v = params[:veteran]
 			end
 			
 			#determine poverty level based on size
 			income = params[:search][:income]
 			poverty = helpers.poverty_level(params[:search][:household])
 			
-			@search = ProgramRequirement.where("min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ? AND veteran = ?", params[:search][:age], params[:search][:age], params[:search][:assetAmount], params[:disabled], params[:veteran])
+			@search = ProgramRequirement.where("zip_code_range_start <= ? AND zip_code_range_end >= ? AND min_age <= ? AND max_age >= ? AND assets_threshold >= ? AND disabled = ? AND veteran = ?", params[:search][:zipcode], params[:search][:zipcode], params[:search][:age], params[:search][:age], params[:search][:assetAmount], d, v)
 			
 			
 			# calculate true max/min income levels for each program and compare it to the annual income of the patient
@@ -63,8 +61,7 @@ class SearchesController < ApplicationController
 					min = 0
 				end
 				
-				if max < income.to_f || min > income.to_f
-					# @search.delete(prg)
+				if max >= income.to_f && min <= income.to_f
 					@programs.push(Program.find(prg.program_id))
 				end
 			end

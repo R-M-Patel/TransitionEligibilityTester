@@ -23,7 +23,7 @@
                 <% else %>
                    
 										<% @programs.each do |p| %>
-												<li><%= p.name %>, <%= p.abbreviation %></li>
+												<li><%= p.name %>, <a href=<%= p.link %>><%= p.abbreviation %></a></li>
                     <% end %>
                 <% end %>
             </div>

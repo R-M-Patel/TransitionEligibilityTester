@@ -34,15 +34,19 @@
 						<h3>Programs</h3>
 						<table>
 							<thead>
+								<th>ID</th>
 								<th>Name</th>
 								<th>Abbreviation</th>
+								<th>Link</th>
 							</thead>
 							
 							<tbody>
 								<% @programs.each do |program| %>
 									<tr>
+										<td><%= program.id %></td>
 										<td><%= program.name %></td>
 										<td><%= program.abbreviation %></td>
+										<td><%= program.link %></td>
 										<td><%= link_to 'Show', program %></td>
 										<td><%= link_to 'Edit', edit_program_path(program) %></td>
 										<td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -64,15 +68,15 @@
 						<table>
 							<thead>
 								<tr>
+									<th>Program</th>
 									<th>Min age</th>
 									<th>Max age</th>
-									<th>Married</th>
 									<th>Max Income</th>
 									<th>Min Income</th>
 									<th>Assets threshold</th>
 									<th>Veteran Status Required</th>
 									<th>Disabilty Required</th>
-									<th>Zip code list</th>
+									<th>Zip code range</th>
 									<th colspan="3"></th>
 								</tr>
 							</thead>
@@ -80,15 +84,15 @@
 							<tbody>
 								<% @requirements.each do |requirement| %>
 									<tr>
+										<td><%= requirement.program_id %></td>
 										<td><%= requirement.min_age %></td>
 										<td><%= requirement.max_age %></td>
-										<td><%= requirement.married %></td>
 										<td><%= requirement.max_income %></td>
 										<td><%= requirement.min_income %></td>
 										<td><%= requirement.assets_threshold %></td>
 										<td><%= requirement.veteran %></td>
 										<td><%= requirement.disabled %></td>
-										<td><%= requirement.zip_code_list %></td>
+										<td><%= requirement.zip_code_range_start %> - <%= requirement.zip_code_range_end %></td>
 										<td><%= link_to 'Show', requirement %></td>
 										<td><%= link_to 'Edit', edit_program_requirement_path(requirement) %></td>
 										<td><%= link_to 'Destroy', requirement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
