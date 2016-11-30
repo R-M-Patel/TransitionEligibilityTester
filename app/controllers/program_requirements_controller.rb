@@ -66,6 +66,7 @@ class ProgramRequirementsController < ApplicationController
   # DELETE /program_requirements/1
   # DELETE /program_requirements/1.json
   def destroy
+		@program_requirement = ProgramRequirement.find(params[:id])
     @program_requirement.destroy
     respond_to do |format|
       format.html { redirect_to program_requirements_url, notice: 'Program requirement was successfully destroyed.' }

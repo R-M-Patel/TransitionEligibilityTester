@@ -1,47 +1,53 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+	<body>
+		<%= render 'layouts/header' %>
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Min age:</strong>
-  <%= @program_requirement.min_age %>
-</p>
-<div class="help-tip">
-	<p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
-</div>
-<p>
-  <strong>Max age:</strong>
-  <%= @program_requirement.max_age %>
-</p>
+		<p>
+			<strong>Min age:</strong>
+			<%= @program_requirement.min_age %>
+		</p>
+		<div class="help-tip">
+			<p>This is the inline help tip! It can contain all kinds of HTML. Style it as you please.</p>
+		</div>
+		<p>
+			<strong>Max age:</strong>
+			<%= @program_requirement.max_age %>
+		</p>
 
-<p>
-	<strong>Min Income:</strong>
-	<%= @program_requirement.max_income %>
-</p>
+		<p>
+			<strong>Min Income:</strong>
+			<%= @program_requirement.max_income %>
+		</p>
 
-<p>
-  <strong>Max Income:</strong>
-  <%= @program_requirement.max_income %>
-</p>
+		<p>
+			<strong>Max Income:</strong>
+			<%= @program_requirement.max_income %>
+		</p>
 
 
-<p>
-  <strong>Assets threshold:</strong>
-  <%= @program_requirement.assets_threshold %>
-</p>
+		<p>
+			<strong>Assets threshold:</strong>
+			<%= @program_requirement.assets_threshold %>
+		</p>
 
-<p>
-  <strong>Veteran:</strong>
-  <%= @program_requirement.veteran %>
-</p>
+		<p>
+			<strong>Veteran:</strong>
+			<%= @program_requirement.veteran %>
+		</p>
 
-<p>
-  <strong>Disabled:</strong>
-  <%= @program_requirement.disabled %>
-</p>
+		<p>
+			<strong>Disabled:</strong>
+			<%= @program_requirement.disabled %>
+		</p>
 
-<p>
-  <strong>Zip code range:</strong>
-  <%= @program_requirement.zip_code_range_start %> - <%= @program_requirement.zip_code_range_end %>
-</p>
+		<p>
+			<strong>Zip code range:</strong>
+			<%= @program_requirement.zip_code_range_start %> - <%= @program_requirement.zip_code_range_end %>
+		</p>
 
-<%= link_to 'Edit', edit_program_requirement_path(@program_requirement) %> |
-<%= link_to 'Back', program_requirements_path %>
+		<%= link_to 'Edit', edit_program_requirement_path(@program_requirement) %> |
+		<%= link_to 'Back', program_requirements_path %>
+	</body>
+</html>

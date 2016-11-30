@@ -1,6 +1,13 @@
-<h1>Editing Program</h1>
+<!DOCTYPE html>
+<html>
+	<body>
+		<%= render 'layouts/header' %>
 
-<%= render 'form', program: @program %>
+		<h1>Editing Program</h1>
 
-<%= link_to 'Show', @program %> |
-<%= link_to 'Back', programs_path %>
+		<%= render 'form', program: @program %>
+
+		<%= link_to 'Show', @program %> |
+		<%= link_to 'Back', programs_path %>
+	</body>
+</html>
