@@ -12,6 +12,7 @@
                         <li></li><%= link_to "Log out", logout_path, method: "delete" %></li>
                     </ul>
                 </li>
+								<li><%= link_to "Control Panel", {:controller => "users", :action => "panel", id: session[:user_id]} %></li>
             <% else %>
                 <li><%= link_to "Log in", login_path %></li>
             <% end %>
