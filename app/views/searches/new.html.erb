@@ -36,17 +36,17 @@
                         <%= f.label :assetAmount, 'Amount in Assets' %>&nbsp&nbsp&nbsp&nbsp&nbsp
                         <%= f.number_field :assetAmount, class: 'form-control input-restriction' %>
                         </br>
-    					<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
-    					<%= f.number_field :household, class: 'form-control input-restriction' %>
-    					</br>
-    					Do you currently hold veteran status?
-    					<%= radio_button_tag(:veteran, false) %>
+												<%= f.label :household, 'Household Size' %> &nbsp&nbsp&nbsp&nbsp&nbsp
+												<%= f.number_field :household, class: 'form-control input-restriction' %>
+												</br>
+												Do you currently hold veteran status?
+												<%= radio_button_tag(:veteran, false) %>
                         <%= label_tag(:veteran_false, "No") %>
                         <%= radio_button_tag(:veteran, true) %>
                         <%= label_tag(:veteran_true, "Yes") %>
                         </br>
                         Do you currently hold disability status?
-    					<%= radio_button_tag(:disabled, false) %>
+												<%= radio_button_tag(:disabled, false) %>
                         <%= label_tag(:disabled_false, "No") %>
                         <%= radio_button_tag(:disabled, true) %>
                         <%= label_tag(:disabled_true, "Yes") %>
