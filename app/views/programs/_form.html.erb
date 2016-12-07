@@ -10,28 +10,38 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= stylesheet_link_tag "programs.scss" %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="container form-inline">
+    <div class="col-md-8 col-md-offset-4">
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :abbreviation %>
+        <%= f.text_field :abbreviation, class: 'form-control' %>
+      </div>
+    	
+    	<div class="field">
+        <%= f.label :link %>
+        <%= f.text_field :link, class: 'form-control' %>
+      </div>
+    	
+    	<div class="field">
+        <%= f.label :description %>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+    
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+      <%= link_to 'Back', programs_path %>
+    </div>
+    
   </div>
-
-  <div class="field">
-    <%= f.label :abbreviation %>
-    <%= f.text_field :abbreviation %>
-  </div>
-	
-	<div class="field">
-    <%= f.label :link %>
-    <%= f.text_field :link %>
-  </div>
-	
-	<div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+  
 <% end %>
