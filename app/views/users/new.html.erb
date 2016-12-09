@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Program Finder</title>
-    </head>
-    
-    <body>
-			<%= render 'layouts/header' %>
-        <h1>Sign Up</h1>
-        
-        <div class="container">
-            <div class="col-md-8 col-md-offset-4">
-                <%= form_for(@user) do |f| %>
-                    <%= render 'shared/error_messages_signup' %>
-                    
-                    <%= f.label :first_name, "First Name" %>
-                    <%= f.text_field :first_name, class: 'form-control input-restriction' %>
-                    
-                    <%= f.label :last_name, "Last Name" %>
-                    <%= f.text_field :last_name, class: 'form-control input-restriction' %>
-                    
-                    <%= f.label :email %>
-                    <%= f.email_field :email, class: 'form-control input-restriction' %>
-                    
-                    <%= f.label :password %>
-                    <%= f.password_field :password, class: 'form-control input-restriction' %>
-                    
-                    <%= f.label :password_confirmation, "Confirmation" %>
-                    <%= f.password_field :password_confirmation, class: 'form-control input-restriction' %>
-                    
-                    <%= f.submit "Create Account", class: "btn btn-primary" %>
-                <% end %>
-            </div>
-        </div>
-    </body>
-    
+  <body>
+		<%= render 'layouts/header' %>
+			<h1>Sign Up</h1>
+			
+			<div class="container">
+					<div class="col-md-8 col-md-offset-4">
+							<%= form_for(@user) do |f| %>
+									<%= render 'shared/error_messages_signup' %>
+									
+									<%= f.label :first_name, "First Name" %>
+									<%= f.text_field :first_name, class: 'form-control input-restriction' %>
+									
+									<%= f.label :last_name, "Last Name" %>
+									<%= f.text_field :last_name, class: 'form-control input-restriction' %>
+									
+									<%= f.label :email %>
+									<%= f.email_field :email, class: 'form-control input-restriction' %>
+									
+									<%= f.label :password %>
+									<%= f.password_field :password, class: 'form-control input-restriction' %>
+									
+									<%= f.label :password_confirmation, "Confirmation" %>
+									<%= f.password_field :password_confirmation, class: 'form-control input-restriction' %>
+									
+									<%= f.submit "Create Account", class: "btn btn-primary" %>
+							<% end %>
+					</div>
+			</div>
+	</body>
 </html>

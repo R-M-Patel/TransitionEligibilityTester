@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Program Finder</title>
-    </head>
-    
-    <body>
-        <%= render 'layouts/header' %>
-        <div class="container">
-            </br>
-            </br> 
-            <!--  Temporary fix with line breaks -->
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Welcome, <%= @user.first_name %></h2>
-            </div>
-        </div>
-        <%= @user.first_name %>, <%= @user.email %>
-    </body>
-    
+	<body>
+			<%= render 'layouts/header' %>
+			<div class="container">
+					</br>
+					</br> 
+					<!--  Temporary fix with line breaks -->
+					<div class="col-md-6 col-md-offset-3">
+							<h2>Welcome, <%= @user.first_name %></h2>
+					</div>
+			</div>
+			<%= @user.first_name %>, <%= @user.email %>
+	</body>
 </html>
